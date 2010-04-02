@@ -1,0 +1,30 @@
+!!!
+%html
+  %head
+    %title Deadpan Sincerity
+    %link( href="http://deadpansincerity.com/css/style.css" rel="stylesheet" type="text/css" )
+  %body
+    #wrapper
+      #header
+        = haml(:header_nav, :layout => false )
+      #nav
+        = haml(:nav, :layout => false )
+
+      %ul#diigoStream
+        %li.title
+          Some things that I have found
+          %a(href="http://www.diigo.com/profile/davidmiller")fascinating            
+        - del.each do |l|
+          %li
+            %a{:href => l.link}
+              = l.title         
+      %ul#twitterStream
+        %li.title
+          Some things that I have been
+          %a(href="http://www.twitter.com/thatdavidmiller")twittering
+        - twit.each do |t|
+          %li
+            = t.description
+            %span.twitterDate= t.pubDate
+          
+            
