@@ -28,20 +28,20 @@
         %h2
           PERSONAL:
         %p
-          Hi, I'm david & this is my home on the web. I live in reading england, where I work as 
+          Hi, I'm david & this is my home on the web. I live in reading england, where I work as
           a web developer. I'm pretty fascinated by the world around me & try to spend as much
-          time learning about it as possible. That's me in the photo above, although 
-          I don't normally look quite so wistful. 
+          time learning about it as possible. That's me in the photo above, although
+          I don't normally look quite so wistful.
         %h2
           PROFESSIONAL:
         %p
-          These days I spend a lot of time with php/python, html, css, & javascript/jquery stacks, 
-          as a developer. Although before that I got myself a degree in philosophy & worked in 
+          These days I spend a lot of time with python & django
+          as a developer. Although before that I got myself a degree in philosophy & worked in
           bookstores for a while amongst other things.
         %h2
           PUBLIC:
         %p
-          You can probably find me on most of those big social sites 
+          You can probably find me on most of those big social sites
           although these are the only ones I'm really active on - feel
           free to stop by & say hello
         %ul
@@ -50,16 +50,20 @@
           %li
             %a( href="http://www.last.fm/user/thatdavidmiller")last.fm
           %li
-            %a( href="http://www.diigo.com/profile/davidmiller")diigo
+            %a( href="http://www.delicious.com/thatdavidmiller")delicious
         %h2
           COLOPHON:
         %p#colophon
-          This site was made in <b>emacs</b> on <b>ubuntu</b> 
-          linux, using <b>html</b> for structure, <b>css</b>
-          for presentation, the <b>jquery</b> javascript library 
+          This site was made in <b>emacs</b> on <b>ubuntu</b>
+          linux, using <b>html</b> compiled from <b>haml</b>
+          for structure, <b>css</b>
+          for presentation, the <b>jquery</b> javascript library
           for interaction, using <b>ruby</b> via
           <b>sinatra</b> for server side joy.
-          The blog is powered by <b>wordpress</b> and hosting is 
+          The blog is powered by <b>wordpress</b> and hosting is
           from <b>webfaction</b>.
-    = haml( :analytics, :layout => false )          
-            
+        %p
+          If you're interested, you can even see the source code on
+          %a( href="http://github.com/davidmiller/sinceresinatra" )github
+
+    = haml( :analytics, :layout => false )

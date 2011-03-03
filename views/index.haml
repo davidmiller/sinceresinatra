@@ -2,7 +2,7 @@
 %html
   %head
     %title Deadpan Sincerity
-    %link( href="http://eyes.deadpansincerity.com/css/style.css" rel="stylesheet" type="text/css" )  
+    %link( href="http://eyes.deadpansincerity.com/css/style.css" rel="stylesheet" type="text/css" )
     %link( rel="openid.server" href="http://deadpansincerity.com/id/index.php")
     %link( rel="openid.delegate" href="http://deadpansincerity.com/id/index.php")
   %body
@@ -15,11 +15,11 @@
       %ul#diigoStream
         %li.title
           Some things that I have found
-          %a(href="http://www.diigo.com/profile/davidmiller")fascinating            
+          %a(href="http://www.delicious.com/thatdavidmiller")fascinating
         - del.each do |l|
           %li
             %a{:href => l.link}
-              = l.title         
+              = l.title
       %ul#twitterStream
         %li.title
           Some things that I have been
@@ -29,4 +29,3 @@
             = t.description
             %span.twitterDate= t.pubDate
     = haml( :analytics, :layout => false )
-            

@@ -6,7 +6,7 @@ get '/' do
   require 'rss/1.0'
   require 'rss/2.0'
   tsrc = "http://twitter.com/statuses/user_timeline/14376262.rss"
-  dsrc = "http://www.diigo.com/rss/user/davidmiller"
+  dsrc = "http://feeds.delicious.com/v2/rss/thatdavidmiller?count=15"
   tcontent = ""
   dcontent = ""
   open(tsrc) do |s| tcontent = s.read end
