@@ -88,7 +88,7 @@
         model: Dead.models.Git,
         fetch: function(){
             $.getJSON(
-                "https://api.github.com/users/davidmiller/events",
+                "/gitproxy/users/davidmiller/events",
                 function(data){
                     Dead.db.gits.reset(_.first(data, 12));
                 })
