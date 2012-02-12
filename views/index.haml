@@ -2,9 +2,69 @@
 %html
   %head
     %title Deadpan Sincerity
-    %link( href="http://eyes.deadpansincerity.com/css/style.css" rel="stylesheet" type="text/css" )
+    %link( href="/css/style.css" rel="stylesheet" type="text/css" )
     %link( rel="openid.server" href="http://deadpansincerity.com/id/index.php")
     %link( rel="openid.delegate" href="http://deadpansincerity.com/id/index.php")
+    %script(id="tmpl_morsel" type="text/x-jquery-tmpl")
+      %li
+        %a{:href => "${u}"}
+          = "${d}"
+    %script(id="tmpl_tweet" type="text/x-jquery-tmpl")
+      %li
+        ${text}
+        %span.twitterDate ${created_at}
+    %script(id="tmpl_code" type="text/x-jquery-tmpl")
+      %li
+
+        {{if type == "IssueCommentEvent"}}
+        Commented on
+        %a{:href => "${payload.issue.html_url}"}
+          = "${repo.name}"
+        {{/if}}
+
+        {{if type == "PullRequestEvent"}}
+        ${payload.action} a Pull Request on
+        %a{:href => "${payload.pull_request.html_url}"}
+          = "${repo.name}"
+        {{/if}}
+
+        {{if type == "PushEvent"}}
+        Pushed to
+        %a{:href => "https://github.com/${repo.name}"}
+          = "${repo.name}"
+        {{each payload.commits}}
+        %a{:href => "https://github.com/${repo.name}/commit/${$value.sha}"}
+          = "${$value.sha.substr(0,8)}"
+        ${$value.message.substr(0, 38)}...
+        %br
+        {{/each}}
+        {{/if}}
+
+        {{if type == "ForkEvent"}}
+        Forked
+        %a{:href => "https://github.com/${repo.name}"}
+          = "${repo.name}"
+        {{/if}}
+
+        {{if type == "GistEvent"}}
+        ${payload.action}d gist
+        %a{:href => "${payload.gist.html_url}"}
+          = "${payload.gist.id}"
+        ${payload.gist.description}
+        {{/if}}
+
+        {{if type == "IssuesEvent"}}
+        ${payload.action} an issue on ${repo.name}
+        %a{:href => "${payload.issue.html_url}"}
+          = "${payload.issue.title}"
+        {{/if}}
+
+        {{if type == "CommitCommentEvent"}}
+        Commented on
+        %a{:href => "${payload.comment.html_url}"}
+          = "${repo.name}"
+        {{/if}}
+        %span.codeDate ${created_at}
   %body
     #wrapper
       #header
@@ -12,20 +72,25 @@
       #nav
         = haml(:nav, :layout => false )
 
-      %ul#diigoStream
+      %ul#tasty
         %li.title
           Some things that I have found
           %a(href="http://www.delicious.com/thatdavidmiller")fascinating
-        - del.each do |l|
-          %li
-            %a{:href => l.link}
-              = l.title
-      %ul#twitterStream
+      %ul#twittering
         %li.title
           Some things that I have been
           %a(href="http://www.twitter.com/thatdavidmiller")twittering
-        - twit.each do |t|
-          %li
-            = t.description
-            %span.twitterDate= t.pubDate
+      %ul#coding
+        %li.title
+          Some things that I have been
+          %a(href="https://github.com/davidmiller")coding
+
     = haml( :analytics, :layout => false )
+
+    %script( src="/js/jquery-1.7.1.js" type="text/javascript")
+    %script( src="/js/jquery.tmpl.js" type="text/javascript")
+    %script( src="/js/jquery.linkify-1.0.js" type="text/javascript")
+    %script( src="/js/underscore.js" type="text/javascript")
+    %script( src="/js/backbone.js" type="text/javascript")
+    %script( src="/js/sincerity.js" type="text/javascript")
+    %script( src="/js/engage.js" type="text/javascript")
