@@ -197,5 +197,5 @@
 
     });
 
-    window.Dead = Dead;
+    context.Dead = Dead;
 })(window)

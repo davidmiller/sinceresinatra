@@ -9,6 +9,8 @@
 // fetch us all the websites!
 //
 $(function(){
-    window.Dead.initialize();
+    if(Dead){
+        Dead.initialize();
+    }
 });
 // Code ends
