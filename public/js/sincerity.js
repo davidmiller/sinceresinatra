@@ -40,6 +40,7 @@
             Dead.db.tasty = new Dead.collections.Tasty;
             Dead.db.tweets = new Dead.collections.Tweets;
             Dead.db.gits = new Dead.collections.Gits;
+            Dead.db.playlist = new Dead.collections.Playlist;
             Dead.app =  new Dead.routers.App;
         }
     }
@@ -54,6 +55,7 @@
     Dead.models.Link = Backbone.Model.extend({});
     Dead.models.Tweet = Backbone.Model.extend({});
     Dead.models.Git = Backbone.Model.extend({});
+    Dead.models.Track = Backbone.Model.extend({})
 
     //
     // Collections
@@ -91,6 +93,18 @@
                 "/gitproxy/users/davidmiller/events",
                 function(data){
                     Dead.db.gits.reset(_.first(data, 12));
+                })
+            return true;
+        }
+    })
+
+    Dead.collections.Playlist = Backbone.Collection.extend({
+        model: Dead.models.Track,
+        fetch: function(){
+            $.getJSON(
+                "http://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&user=thatdavidmiller&api_key=6682a672d8fea99de700822b70f71f9f&format=json&callback=?",
+                function(data){
+                    Dead.db.playlist.reset(data.recenttracks.track);
                 })
             return true;
         }
@@ -150,6 +164,22 @@
         }
     })
 
+    Dead.views.Hearing = Backbone.View.extend({
+
+        el: "#hearing",
+        template: $("#tmpl_track"),
+
+        initialize: function(){
+            _.bindAll(this, "render")
+            Dead.db.playlist.bind("reset", this.render)
+        },
+
+        render: function(options){
+            $(this.el).append(this.template.tmpl(Dead.db.playlist.toJSON()));
+            return this;
+        }
+    })
+
     //
     // Application
     //
@@ -158,9 +188,11 @@
             Dead.fascinating = new Dead.views.Fascinating;
             Dead.twittering = new Dead.views.Twittering;
             Dead.coding = new Dead.views.Coding;
+            Dead.hearing = new Dead.views.Hearing;
             Dead.db.tasty.fetch();
             Dead.db.tweets.fetch();
             Dead.db.gits.fetch();
+            Dead.db.playlist.fetch();
         },
 
     });

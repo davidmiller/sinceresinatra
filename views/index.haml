@@ -5,14 +5,17 @@
     %link( href="/css/style.css" rel="stylesheet" type="text/css" )
     %link( rel="openid.server" href="http://deadpansincerity.com/id/index.php")
     %link( rel="openid.delegate" href="http://deadpansincerity.com/id/index.php")
+
     %script(id="tmpl_morsel" type="text/x-jquery-tmpl")
       %li
         %a{:href => "${u}"}
           = "${d}"
+
     %script(id="tmpl_tweet" type="text/x-jquery-tmpl")
       %li
         ${text}
         %span.twitterDate ${created_at}
+
     %script(id="tmpl_code" type="text/x-jquery-tmpl")
       %li
 
@@ -65,6 +68,12 @@
           = "${repo.name}"
         {{/if}}
         %span.codeDate ${created_at}
+
+    %script(id="tmpl_track" type="text/x-jquery-tmpl")
+      %li
+        ${text}
+        %span.twitterDate ${created_at}
+
   %body
     #wrapper
       #header
