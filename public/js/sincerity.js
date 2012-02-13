@@ -92,7 +92,13 @@
             $.getJSON(
                 "/gitproxy/users/davidmiller/events",
                 function(data){
-                    Dead.db.gits.reset(_.first(data, 12));
+                    Dead.db.gits.reset(
+                        _.map(_.first(data, 12),
+                              function(item){
+                                  item.template = $("#tmpl_" + item.type);
+                                  return item;
+                              })
+                    );
                 })
             return true;
         }
@@ -151,15 +157,18 @@
     Dead.views.Coding = Backbone.View.extend({
 
         el: "#coding",
-        template: $("#tmpl_code"),
 
         initialize: function(){
-            _.bindAll(this, "render")
+            _.bindAll(this, "render", "add")
             Dead.db.gits.bind("reset", this.render)
         },
 
+        add: function(event){
+            $(this.el).append(event.get('template').tmpl(event.toJSON()));
+        },
+
         render: function(options){
-            $(this.el).append(this.template.tmpl(Dead.db.gits.toJSON()));
+            Dead.db.gits.each(this.add)
             return this;
         }
     })
