@@ -140,7 +140,8 @@ ul#twittering li{
 margin: 6px 0px;
 }
 span.twitterDate,
-span.codeDate
+span.codeDate,
+span.morselDate
 {
 display: block;
 font-size: 9px;

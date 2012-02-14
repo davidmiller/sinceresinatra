@@ -37,11 +37,21 @@
         db: {},
 
         initialize: function(){
+            // Set up datastore
             Dead.db.tasty = new Dead.collections.Tasty;
             Dead.db.tweets = new Dead.collections.Tweets;
             Dead.db.gits = new Dead.collections.Gits;
             Dead.db.playlist = new Dead.collections.Playlist;
-            Dead.app =  new Dead.routers.App;
+            // Initialize views to bind on events
+            Dead.fascinating = new Dead.views.Fascinating;
+            Dead.twittering = new Dead.views.Twittering;
+            Dead.coding = new Dead.views.Coding;
+            Dead.hearing = new Dead.views.Hearing;
+            // Fetch data
+            Dead.db.tasty.fetch();
+            Dead.db.tweets.fetch();
+            Dead.db.gits.fetch();
+            Dead.db.playlist.fetch();
         }
     }
 
@@ -188,23 +198,6 @@
             return this;
         }
     })
-
-    //
-    // Application
-    //
-    Dead.routers.App = Backbone.Router.extend({
-        initialize: function(){
-            Dead.fascinating = new Dead.views.Fascinating;
-            Dead.twittering = new Dead.views.Twittering;
-            Dead.coding = new Dead.views.Coding;
-            Dead.hearing = new Dead.views.Hearing;
-            Dead.db.tasty.fetch();
-            Dead.db.tweets.fetch();
-            Dead.db.gits.fetch();
-            Dead.db.playlist.fetch();
-        },
-
-    });
 
     context.Dead = Dead;
 })(window)

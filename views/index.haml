@@ -10,23 +10,26 @@
       %li
         %a{:href => "${u}"}
           = "${d}"
+        %span.morselDate ${XDate(dt).toUTCString()}
 
     %script(id="tmpl_tweet" type="text/x-jquery-tmpl")
       %li
         ${text}
-        %span.twitterDate ${created_at}
+        %span.twitterDate ${XDate(created_at).toUTCString()}
 
     %script(id="tmpl_IssueCommentEvent" type="text/x-jquery-tmpl")
       %li
         Commented on
         %a{:href => "${payload.issue.html_url}"}
           = "${repo.name}"
+        %span.codeDate ${XDate(created_at).toUTCString()}
 
     %script(id="tmpl_PullRequestEvent" type="text/x-jquery-tmpl")
       %li
         ${payload.action} a Pull Request on
         %a{:href => "${payload.pull_request.html_url}"}
           = "${repo.name}"
+        %span.codeDate ${XDate(created_at).toUTCString()}
 
     %script(id="tmpl_PushEvent" type="text/x-jquery-tmpl")
       %li
@@ -39,12 +42,14 @@
         ${$value.message.substr(0, 38)}...
         %br
         {{/each}}
+        %span.codeDate ${XDate(created_at).toUTCString()}
 
     %script(id="tmpl_ForkEvent" type="text/x-jquery-tmpl")
       %li
         Forked
         %a{:href => "https://github.com/${repo.name}"}
           = "${repo.name}"
+        %span.codeDate ${XDate(created_at).toUTCString()}
 
     %script(id="tmpl_GistEvent" type="text/x-jquery-tmpl")
       %li
@@ -52,24 +57,35 @@
         %a{:href => "${payload.gist.html_url}"}
           = "${payload.gist.id}"
         ${payload.gist.description}
+        %span.codeDate ${XDate(created_at).toUTCString()}
 
     %script(id="tmpl_IssuesEvent" type="text/x-jquery-tmpl")
       %li
         ${payload.action} an issue on ${repo.name}
         %a{:href => "${payload.issue.html_url}"}
           = "${payload.issue.title}"
+        %span.codeDate ${XDate(created_at).toUTCString()}
 
     %script(id="tmpl_CommitCommentEvent" type="text/x-jquery-tmpl")
       %li
         Commented on
         %a{:href => "${payload.comment.html_url}"}
           = "${repo.name}"
-        %span.codeDate ${created_at}
+        %span.codeDate ${XDate(created_at).toUTCString()}
+
+    %script(id="tmpl_CreateEvent" type="text/x-jquery-tmpl")
+      %li
+        Created a ${payload.ref_type} ${payload.ref}
+        %a{:href => "https://github.com/${repo.name}"}
+          = "${repo.name}"
+        %br
+        ${payload.description}
+        %span.codeDate ${XDate(created_at).toUTCString()}
 
     %script(id="tmpl_track" type="text/x-jquery-tmpl")
       %li
         ${text}
-        %span.twitterDate ${created_at}
+
 
   %body
     #wrapper
@@ -91,12 +107,7 @@
           Some things that I have been
           %a(href="https://github.com/davidmiller")coding
 
-    = haml( :analytics, :layout => false )
+    - if analyze == true
+      = haml( :analytics, :layout => false )
 
-    %script( src="/js/lib/jquery-1.7.1.js" type="text/javascript")
-    %script( src="/js/lib/jquery.tmpl.js" type="text/javascript")
-    %script( src="/js/lib/jquery.linkify-1.0.js" type="text/javascript")
-    %script( src="/js/lib/underscore.js" type="text/javascript")
-    %script( src="/js/lib/backbone.js" type="text/javascript")
-    %script( src="/js/sincerity.js" type="text/javascript")
-    %script( src="/js/engage.js" type="text/javascript")
+    = haml( scripts, :layout => false )
