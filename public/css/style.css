@@ -2,13 +2,8 @@ body
 {
     font-family: verdana, helvetica, walkway, sans-serif;
     *background-color: #fff;
-    background: url(images/layout_grid.gif) top center repeat-y;
+    /*background: url(images/layout_grid.gif) top center repeat-y;*/
     margin: 0px;
-}
-#wrapper
-{
-    width: 940px;
-    margin: 0 auto;
 }
 a,
 ul#tasty li.title a
@@ -30,22 +25,15 @@ ul#tasty li.title a:hover
 {
     height: 30px
 }
-#headerNav
-{
-    margin: 0px 0px 0px 278px;
-    padding: 0px 0px 0px 0px;
-    list-style-type: none;
-}
+
 #headerNav li
 {
-    width: 110px;
     background-color: white;
     display: inline-block;
     padding: 6px 0px 12px 0px;
     margin: 0px 2px 0px 0px;
     text-transform: uppercase;
     text-align: center;
-    width: 110px
 }
 #headerNav li:hover,
 #headerNav li:hover a
@@ -58,15 +46,6 @@ ul#tasty li.title a:hover
 {
     background-color: red;
     color: white;
-}
-#nav
-{
-    position: absolute;
-    top: 0px;
-    border-left: solid 1px red;
-    font-size: 13px;
-    width: 195px;
-    margin: -26px 0px 0px 0px;
 }
 #nav h2
 {
@@ -92,38 +71,80 @@ ul#tasty li.title a:hover
 
 /* Homepage streams */
 
-ul#coding li.title,
-ul#twittering li.title,
-ul#tasty li.title
+.column li.title
 {
-    font-size: 12px;
     border-bottom: 1px solid red;
     margin-left: -6px;
     padding-left: 6px;
 }
 
-ul#coding,
-ul#twittering,
-ul#tasty
+.column
 {
+	clear: both;
     list-style-type: none;
-    font-size: 10px;
     padding: 6px;
-    width: 188px;
     border-left: red solid 1px;
-    float: left;
 }
-ul#twittering
-{
-    margin: 144px 0px 0px 31px;
-}
-ul#tasty
-{
-    margin: 100px 0px 0px 278px;
-}
-ul#coding
-{
-    margin: 184px 0px 0px 28px;
+@media screen and (min-width: 42em){
+	#wrapper
+	{
+		width: 940px;
+		margin: 0 auto;
+	}
+	#headerNav
+	{
+    margin: 0px 0px 0px 278px;
+    padding: 0px 0px 0px 0px;
+    list-style-type: none;
+	}
+
+	#headerNav li
+	{
+		width: 110px;
+    }
+	#nav
+	{
+		position: absolute;
+		top: 0px;
+		border-left: solid 1px red;
+		font-size: 13px;
+		width: 195px;
+		margin: -26px 0px 0px 0px;
+	}
+	.column
+	{
+		clear: none;
+		float: left;
+		font-size: 10px;
+		width: 188px;
+	}	
+	.column li.title
+	{
+		font-size: 12px;
+	}
+	ul#twittering
+	{
+		margin: 144px 0px 0px 31px;
+	}
+	ul#tasty
+	{
+		margin: 100px 0px 0px 278px;
+	}
+	ul#coding
+	{
+		margin: 184px 0px 0px 28px;
+	}
+	.fullContent{
+	margin: 30px 0px 0px 234px;
+	*border: 1px solid black;
+	width: 626px;
+	border-right: 1px red solid;
+	}
+	
+	.fullContent img{
+	width: 388px;
+	float: left;
+	}
 }
 ul#tasty a
 {
@@ -147,16 +168,7 @@ display: block;
 font-size: 9px;
 color: #777
 }
-.fullContent{
-margin: 30px 0px 0px 234px;
-*border: 1px solid black;
-width: 626px;
-border-right: 1px red solid;
-}
-.fullContent img{
-width: 388px;
-float: left;
-}
+
 .fullContent p{
 clear: both;
 padding: 0px 12px;

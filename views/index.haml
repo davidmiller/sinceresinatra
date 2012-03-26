@@ -5,6 +5,7 @@
     %link( href="/css/style.css" rel="stylesheet" type="text/css" )
     %link( rel="openid.server" href="http://deadpansincerity.com/id/index.php")
     %link( rel="openid.delegate" href="http://deadpansincerity.com/id/index.php")
+    %meta( name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1")
 
     %script(id="tmpl_morsel" type="text/x-jquery-tmpl")
       %li
@@ -91,18 +92,18 @@
     #wrapper
       #header
         = haml(:header_nav, :layout => false )
-      #nav
+      #nav.column
         = haml(:nav, :layout => false )
 
-      %ul#tasty
+      %ul#tasty.column
         %li.title
           Some things that I have found
           %a(href="http://www.delicious.com/thatdavidmiller")fascinating
-      %ul#twittering
+      %ul#twittering.column
         %li.title
           Some things that I have been
           %a(href="http://www.twitter.com/thatdavidmiller")twittering
-      %ul#coding
+      %ul#coding.column
         %li.title
           Some things that I have been
           %a(href="https://github.com/davidmiller")coding
