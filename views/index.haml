@@ -1,11 +1,9 @@
 !!!
 %html
   %head
-    %title Deadpan Sincerity
-    %link( href="/css/style.css" rel="stylesheet" type="text/css" )
+    = haml(:head)
     %link( rel="openid.server" href="http://deadpansincerity.com/id/index.php")
     %link( rel="openid.delegate" href="http://deadpansincerity.com/id/index.php")
-    %meta( name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1")
 
     %script(id="tmpl_morsel" type="text/x-jquery-tmpl")
       %li

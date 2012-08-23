@@ -1,8 +1,7 @@
 !!!
 %html
   %head
-    %title Deadpan Sincerity
-    %link( href="http://eyes.deadpansincerity.com/css/style.css" rel="stylesheet" type="text/css" )
+    = haml(:head)
   %body
     #wrapper
       #header
@@ -18,7 +17,7 @@
 
       .fullContent
         .contentHeader
-          %img(src="http://eyes.deadpansincerity.com/images/profile.jpg")
+          %img(src="/img/profile.jpg")
             %p.contentTitle
               Some notes to
             %p.contentTitle
@@ -28,22 +27,20 @@
         %h2
           PERSONAL:
         %p
-          Hi, I'm david & this is my home on the web. I live in reading england, where I work as
-          a web developer. I'm pretty fascinated by the world around me & try to spend as much
-          time learning about it as possible. That's me in the photo above, although
-          I don't normally look quite so wistful.
+          David was born at a very young age. Sometime after that he studied Philosophy,
+          before deciding not to worry so much about the meaning of life.
         %h2
           PROFESSIONAL:
         %p
-          These days I spend a lot of time with python & django
-          as a developer. Although before that I got myself a degree in philosophy & worked in
-          bookstores for a while amongst other things.
+          Unrelated to this, he later became a software engineer, where serendipitously enough,
+          it turned out that having strong opinions about truthiness, and the logical consistency
+          of concepts could actually be of practical use.
         %h2
           PUBLIC:
         %p
-          You can probably find me on most of those big social sites
-          although these are the only ones I'm really active on - feel
-          free to stop by & say hello
+          If you are looking for <b>More Information</b> concerning the activities of David Miller,
+          I bsuggest that you engage the following places or simply mail the author of this site at
+          the address to the left...
         %ul
           %li
             %a( href="http://www.twitter.com/thatdavidmiller" )twitter
@@ -54,10 +51,11 @@
         %h2
           COLOPHON:
         %p#colophon
-          This site was made in <b>emacs</b> on <b>ubuntu</b>
+          This site was made in <b>emacs</b> on <b>crunchbang</b>
           linux, using <b>html</b> compiled from <b>haml</b>
           for structure, <b>css</b>
-          for presentation, the <b>jquery</b> javascript library
+          for presentation, the <b>jquery</b> and <b>backbone</b>
+          javascript libraries
           for interaction, using <b>ruby</b> via
           <b>sinatra</b> for server side joy.
           The blog is powered by <b>wordpress</b> and hosting is
@@ -66,4 +64,5 @@
           If you're interested, you can even see the source code on
           %a( href="http://github.com/davidmiller/sinceresinatra" )github
 
-    = haml( :analytics, :layout => false )
+    - if analyze == true
+      = haml( :analytics, :layout => false )
