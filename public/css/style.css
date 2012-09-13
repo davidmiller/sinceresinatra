@@ -117,7 +117,7 @@ ul#tasty li.title a:hover
 		float: left;
 		font-size: 10px;
 		width: 188px;
-	}	
+	}
 	.column li.title
 	{
 		font-size: 12px;
@@ -140,7 +140,7 @@ ul#tasty li.title a:hover
 	width: 626px;
 	border-right: 1px red solid;
 	}
-	
+
 	.fullContent img{
 	width: 388px;
 	float: left;
@@ -173,9 +173,15 @@ color: #777
 clear: both;
 padding: 0px 12px;
 }
-.fullContent div.contentHeader{
+.fullContent div.contentHeaderImg{
 border-bottom: 1px red solid;
 height: 266px;
+margin-top: -60px;
+padding-top: 60px;
+}
+.fullContent div.contentHeader{
+border-bottom: 1px red solid;
+height: 66px;
 margin-top: -60px;
 padding-top: 60px;
 }
@@ -202,6 +208,15 @@ display: inline-block;
 padding: 3px 12px;
 margin: 12px 12px 12px 0px;
 font-size: 20px;
+}
+.fullContent h3{
+font-weight: normal;
+color: red;
+background: white;
+display: inline-block;
+padding: 3px 6px;
+margin: 6px 6px 6px 0px;
+font-size: 14px;
 }
 .fullContent ul{
 list-style-type: none;
