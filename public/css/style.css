@@ -218,6 +218,10 @@ padding: 3px 6px;
 margin: 6px 6px 6px 0px;
 font-size: 14px;
 }
+.fullContent h4{
+    margin: 3px 3px 3px 6px;
+    padding: 3px 3px 3px 6px;
+}
 .fullContent ul{
 list-style-type: none;
 }

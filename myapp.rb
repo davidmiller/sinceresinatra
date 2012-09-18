@@ -22,6 +22,10 @@ get '/about/' do
   haml :about, :locals => {:analyze => analyze}
 end
 
+get '/cv/' do
+  haml :cv, :locals => {:analyze => analyze}
+end
+
 get '/gitproxy/*' do
   open("https://api.github.com/#{params[:splat]}").read()
 end
