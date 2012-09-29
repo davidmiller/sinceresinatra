@@ -34,6 +34,6 @@ get '/gitproxy/*' do
   open("https://api.github.com/#{params[:splat]}").read()
 end
 
-get '/talks/alice/' do
+get '/talks/alice/?' do
   redirect '/talks/alice/index.html'
 end
