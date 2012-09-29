@@ -80,148 +80,156 @@ ul#tasty li.title a:hover
 
 .column
 {
-	clear: both;
+    clear: both;
     list-style-type: none;
     padding: 6px;
     border-left: red solid 1px;
 }
 @media screen and (min-width: 42em){
-	#wrapper
-	{
-		width: 940px;
-		margin: 0 auto;
-	}
-	#headerNav
-	{
-    margin: 0px 0px 0px 278px;
-    padding: 0px 0px 0px 0px;
-    list-style-type: none;
-	}
-
-	#headerNav li
-	{
-		width: 110px;
+    #wrapper
+    {
+	width: 940px;
+	margin: 0 auto;
     }
-	#nav
-	{
-		position: absolute;
-		top: 0px;
-		border-left: solid 1px red;
-		font-size: 13px;
-		width: 195px;
-		margin: -26px 0px 0px 0px;
-	}
-	.column
-	{
-		clear: none;
-		float: left;
-		font-size: 10px;
-		width: 188px;
-	}
-	.column li.title
-	{
-		font-size: 12px;
-	}
-	ul#twittering
-	{
-		margin: 144px 0px 0px 31px;
-	}
-	ul#tasty
-	{
-		margin: 100px 0px 0px 278px;
-	}
-	ul#coding
-	{
-		margin: 184px 0px 0px 28px;
-	}
-	.fullContent{
+    #headerNav
+    {
+        margin: 0px 0px 0px 278px;
+        padding: 0px 0px 0px 0px;
+        list-style-type: none;
+    }
+
+    #headerNav li
+    {
+	width: 110px;
+    }
+    #nav
+    {
+	position: absolute;
+	top: 0px;
+	border-left: solid 1px red;
+	font-size: 13px;
+	width: 195px;
+	margin: -26px 0px 0px 0px;
+    }
+    .column
+    {
+	clear: none;
+	float: left;
+	font-size: 10px;
+	width: 188px;
+    }
+    .column li.title
+    {
+	font-size: 12px;
+    }
+    ul#twittering
+    {
+	margin: 144px 0px 0px 31px;
+    }
+    ul#tasty
+    {
+	margin: 100px 0px 0px 278px;
+    }
+    ul#coding
+    {
+	margin: 184px 0px 0px 28px;
+    }
+    .fullContent{
 	margin: 30px 0px 0px 234px;
 	*border: 1px solid black;
 	width: 626px;
 	border-right: 1px red solid;
-	}
+    }
 
-	.fullContent img{
+    .fullContent img{
 	width: 388px;
 	float: left;
-	}
+    }
 }
 ul#tasty a
 {
-color: #000;
+    color: #000;
 }
 ul#tasty a:hover
 {
-color: red;
+    color: red;
 }
-
+.pb60{
+    padding-bottom: 60px;
+}
 ul#coding li,
 ul#tasty li,
 ul#twittering li{
-margin: 6px 0px;
+    margin: 6px 0px;
 }
 span.twitterDate,
 span.codeDate,
 span.morselDate
 {
-display: block;
-font-size: 9px;
-color: #777
+    display: block;
+    font-size: 9px;
+    color: #777
 }
 
 .fullContent p{
-clear: both;
-padding: 0px 12px;
+    clear: both;
+    padding: 0px 12px;
 }
 .fullContent div.contentHeaderImg{
-border-bottom: 1px red solid;
-height: 266px;
-margin-top: -60px;
-padding-top: 60px;
+    border-bottom: 1px red solid;
+    height: 266px;
+    margin-top: -60px;
+    padding-top: 60px;
 }
 .fullContent div.contentHeader{
-border-bottom: 1px red solid;
-height: 66px;
-margin-top: -60px;
-padding-top: 60px;
+    border-bottom: 1px red solid;
+    height: 66px;
+    margin-top: -60px;
+    padding-top: 60px;
 }
 .fullContent p.contentTitle{
-clear: none;
-color: white;
-font-family: georgia, serif;
-font-size: 22px;
-padding: 6px 12px;
-background-color: red;
-overflow: hidden;
-margin: 0px 3px 10px 10px;
-float: right;
-text-align: right;
+    clear: none;
+    color: white;
+    font-family: georgia, serif;
+    font-size: 22px;
+    padding: 6px 12px;
+    background-color: red;
+    overflow: hidden;
+    margin: 0px 3px 10px 10px;
+    float: right;
+    text-align: right;
+}
+.fullContent div.contentHeader p.contentTitle{
+    clear: both;
+}
+p.jump20{
+    height: 20px;
 }
 p.contentTitle b{
-font-size: 28px;
+    font-size: 28px;
 }
 .fullContent h2{
-font-weight: normal;
-color: red;
-background: white;
-display: block;
-padding: 3px 12px;
-margin: 12px 12px 12px 0px;
-font-size: 20px;
+    font-weight: normal;
+    color: red;
+    background: white;
+    display: block;
+    padding: 3px 12px;
+    margin: 12px 12px 12px 0px;
+    font-size: 20px;
 }
 .fullContent h3{
-font-weight: normal;
-color: red;
-background: white;
-display: inline-block;
-padding: 3px 6px;
-margin: 6px 6px 6px 0px;
-font-size: 14px;
+    font-weight: normal;
+    color: red;
+    background: white;
+    display: inline-block;
+    padding: 3px 6px;
+    margin: 6px 6px 6px 0px;
+    font-size: 14px;
 }
 .fullContent h4{
     margin: 3px 3px 3px 6px;
     padding: 3px 3px 3px 6px;
 }
 .fullContent ul{
-list-style-type: none;
+    list-style-type: none;
 }

@@ -22,10 +22,18 @@ get '/about/' do
   haml :about, :locals => {:analyze => analyze}
 end
 
+get '/projects/?' do
+  haml :projects, :locals => {:analyze => analyze}
+end
+
 get '/cv/' do
   haml :cv, :locals => {:analyze => analyze}
 end
 
 get '/gitproxy/*' do
   open("https://api.github.com/#{params[:splat]}").read()
+end
+
+get '/talks/alice/' do
+  redirect '/talks/alice/index.html'
 end

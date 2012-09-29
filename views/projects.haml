@@ -1,0 +1,83 @@
+!!!
+%html
+  %head
+    = haml(:head)
+  %body
+    #wrapper
+      #header
+        %ul#headerNav
+          %li
+            %a(href="/") home
+          %li
+            %a(href="http://blog.deadpansincerity.com") blog
+          %li
+            %a(href="about/")about
+          %li.active
+            %a(href="projects/")projects
+      #nav
+        = haml(:nav, :layout => false )
+
+      .fullContent
+        .contentHeader.pb60
+          %p.contentTitle
+            A selection of
+          %br
+          %p.contentTitle
+            Open Sources...
+          %p.jump20
+
+        %h2
+          rpc
+
+        %p
+          An RPC library for Python. Itch-scratching, boilerplate-shedding goodness.
+          Thrift/JSON/XML RPC calls with a consistent Python interface
+          %br
+          %a(href="/docs/rpc") Docs
+          %br
+          %a(href="http://github.com/davidmiller/rpc")Sources
+
+        %h2
+          ffs
+
+        %p
+          A more pleasant way to deal with files & paths in Python, plus a grab-bag
+          of *nix utilities translated into Python that work the way they do from the
+          commandline.
+          %br
+          %a(href="/docs/ffs") Docs
+          %br
+          %a(href="http://github.com/davidmiller/ffs")Sources
+
+        %h2
+          Pony Mode
+
+        %p
+          A Django mode for Emacs so that you never have to leave again...
+          %br
+          %a(href="/docs/pony") Docs
+          %br
+          %a(href="http://github.com/davidmiller/pony-mode")Sources
+
+        %h2
+          Dizzee
+
+        %p
+          Process management for Emacs with on-save service reloading. Mostly aimed at
+          devs working on projects that require running multiple servers from the commandline
+          at the same time.
+          %br
+          %a(href="http://github.com/davidmiller/dizzee")Sources & README
+
+
+        %h2
+          \... anything else?
+
+        %p
+          Well there's a bunch more stuffs at
+          %a(href="http://github.com/davidmiller") Github
+          as well...
+
+
+    - if analyze == true
+      = haml( :analytics, :layout => false )
