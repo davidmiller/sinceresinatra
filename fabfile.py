@@ -1,3 +1,4 @@
+import time
 from fabric.api import *
 
 web = ['happenup@deadpansincerity.com']
@@ -10,4 +11,6 @@ def deploy():
     with cd("/home/happenup/webapps/rubysincerity/sincere"):
         run("git pull github master")
     # with cd("/home/happenup/webapps/rubysincerity"):
-    #     run("./bin/restart")
+    #     run("./bin/stop")
+    #     time.sleep(1)
+    #     run("./bin/start")
