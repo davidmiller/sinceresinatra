@@ -1,0 +1,147 @@
+!!!
+%html
+  %head
+    = haml(:head)
+  %body
+    #wrapper
+      #header
+      #nav
+        %h1.contenttitle#logo
+          curriculum
+          %br/
+          vitae
+          %h2
+            david miller
+          %p
+            e: david at deadpansincerity.com
+            %br
+            p: 07854 880 883
+            %br
+            t: @thadavidmiller
+
+      .fullContent
+        .contentHeader
+        %h2
+          SKILLS:
+        %p
+          %h3
+            Languages:
+          %p
+            Expert: Python
+            %br
+            Strong: Javascript, Lisp, PHP, Ruby
+            %br
+            Decent: Bash, C++, C#, Clojure
+            %br
+            Cursory: Erlang, Java Perl R
+            %br
+            \& Also: HTML/CSS
+
+          %h3
+            Databases:
+          %p
+            Postgres, MySQL, Cassandra, MongoDB
+
+          %h3
+            Frameworks & Technologies:
+          %p
+            Django, Pyramid, Flask, Sinatra,
+            %br
+            SQLAlchemy, Gevent, Thrift, Cucumber, Lettuce, Celery
+            %br
+            Backbone, jQuery, NodeJS, Haml
+            %br
+            wxPython,
+            %br
+            Zookeeper, Memcache
+          %h3
+            Dev-Ops:
+          %p
+            Fabric, Puppet
+            %br
+            Nginx, Apache, Gunicorn
+            %br
+            Buildbot CI
+          %h3
+            Other:
+          %p
+            Git, Hg,
+            %br
+            Make, Rake, RPM Packaging,
+            %br
+            Basic *nix toolkit (find grep xargs tar ps lsof curl vi strace &etc)
+            %br
+            Mono
+
+        %h2
+          EXPERIENCE:
+        %h4
+          May 2011 - Pres Onzo Ltd Senior Developer
+        %p
+          Onzo is a clean tech startup providing analytics on big data to produce insight and
+          behaviour change for the energy industry.
+        %p
+          While the main bulk of the work at Onzo was focused on analytics servers that processed large
+          datasets of consumer energy usage and expose this data across a range of APIs, the startup environment
+          required flexibility and adaptibility. Being able to turn a hand to debugging low level USB device
+          drivers or whipping up browser-based javascript applications was a big advantage.
+        %p
+          Major projects included performance engineering to turn proof of concept systems into
+          production scale architectures which would serve the company's growing scalability demands well into
+          the future.
+        %p
+          As team leader, I was involved in the full SDLC from requirements gathering sessions with key
+          stakeholders, architecture and design, through implementation, release, and also liasing with customers
+          to diagnose and triage issues in production.
+        %h4
+          Apr 2010 - Apr 2011 Spirit Solar Lead Developer
+        %p
+          Spirit Solar are an energy startup providing Solar panel to the UK domestic market.
+        %p
+          As the first developer, and one of the first handful of employees, I designed and built an in-house
+          CRM & project management solution that grew with the business. Catering to a distributed team, valuing
+          the ability to put an idea into production within days or sometimes hours, a Django-based application
+          hooked into an extensive test suite and continuous integration/deployment systems evolved.
+        %h4
+          Jan 2009 - Mar 2010 Primrose London Web Developer
+        %p
+          Primrose London are an online retailer of various home & garden products, with a focus on the
+          European consumer market.
+        %p
+          Initially hired as a front-ender to work on the re-design of Primrose's online portfolio, I helped
+          introduce data-driven design decisions based on analytics and A/B testing linked to results, before
+          shifting to work mostly on the server-side.
+        %p
+          Once there, I worked on a range of projects, improving internationalisation, optimising the
+          performance of reporting tools, and writing an employee time-tracking system to replace the previous
+          Excel spreadsheet + Email system.
+        %p
+          Throughout this period I was proactively involved in improving processes, introducing both Version
+          Control (Git), non email-based bug tracking (Redmine), and testing (Unit) to the company.
+        %h4
+          2005 - Present Freelance work
+        %p
+          During this period I've also engaged on a variety of freelance work, ranging from small
+          websites for bands and artists, through to government contracts.
+        %h2
+          OTHER
+        %p
+          In addition to my commercial experience, I am also an active participent in the wider FOSS
+          community, attending and speaking at Conferences, Hack-Days & User Groups.
+        %p
+          I maintain several liberally licensed Python and Lisp libraries which can be found on my
+          %a(href="https://github.com/davidmiller")
+            Github Profile
+          as well as regularly contributing patches and bugfixes to various Open Source projects.
+        %p
+          Before all this, while working out the right direction for my career I've worked in bars,
+          bookshops and on building sites to name just a few.
+        %h2
+          QUALIFICATIONS:
+        %p
+          Between <b>2004</b> and <b>2007</b> I obtained a 2:1 degree in Philosophy from St Mary's University.
+        %p
+          Previous to that, I Obtained 3 A Levels and 11 GCSE qualifications.
+
+    - if analyze == true
+      = haml( :analytics, :layout => false )
