@@ -9,5 +9,5 @@ def deploy():
     """
     with cd("/home/happenup/webapps/rubysincerity/sincere"):
         run("git pull github master")
-    with cd("/home/happenup/webapps/rubysincerity"):
-        run("./bin/restart")
+    # with cd("/home/happenup/webapps/rubysincerity"):
+    #     run("./bin/restart")
