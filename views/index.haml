@@ -93,19 +93,6 @@
       #nav.column
         = haml(:nav, :layout => false )
 
-      %ul#tasty.column
-        %li.title
-          Some things that I have found
-          %a(href="http://www.delicious.com/thatdavidmiller")fascinating
-      %ul#twittering.column
-        %li.title
-          Some things that I have been
-          %a(href="http://www.twitter.com/thatdavidmiller")twittering
-      %ul#coding.column
-        %li.title
-          Some things that I have been
-          %a(href="https://github.com/davidmiller")coding
-
     - if analyze == true
       = haml( :analytics, :layout => false )
 
